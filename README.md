@@ -12,7 +12,10 @@ Run it with:
 
 ```shell
 npx violation-comments-to-bitbucket-server-command-line \
- - \
+ -pat TOKENHERE \
+ -pk PROJECT_KEY \
+ -rs REPO_SLUT \
+ -prid 1234 \
  -v "CHECKSTYLE" "." ".*checkstyle/main\.xml$" "Checkstyle" \
  -v "JSHINT" "." ".*jshint/report\.xml$" "JSHint"
 ```
