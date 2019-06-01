@@ -6,6 +6,8 @@
 
 Report static code analysis to Bitbucket Server. It uses the [Violations Lib](https://github.com/tomasbjerre/violations-lib).
 
+![Bitbucket Server Comment](/bitbucket-server-comment.png)
+
 The runnable can be found in [NPM](https://www.npmjs.com/package/violation-comments-to-bitbucket-server-command-line).
 
 Run it with:
