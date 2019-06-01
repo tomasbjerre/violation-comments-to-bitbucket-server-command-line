@@ -92,7 +92,8 @@ public class Runner {
         booleanArgument("-keep-old-comments").defaultValue(false).build();
     final Argument<String> commentTemplateArg =
         stringArgument("-comment-template")
-            .defaultValue("See: https://github.com/tomasbjerre/violation-comments-lib")
+            .defaultValue("")
+            .description("https://github.com/tomasbjerre/violation-comments-lib")
             .build();
     final Argument<Integer> pullRequestIdArg =
         integerArgument("-pull-request-id", "-prid").required().build();
