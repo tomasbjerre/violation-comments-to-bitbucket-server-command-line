@@ -118,6 +118,12 @@ Missing a format? Open an issue [here](https://github.com/tomasbjerre/violations
                                                         Default: true
 -comment-only-changed-content-context, -coccc <integer> <integer>: -2,147,483,648 to 2,147,483,647
                                                         Default: 5
+-comment-only-changed-files, -cocf <boolean>            True if only changed 
+                                                        files should be commented. 
+                                                        False if all findings should 
+                                                        be commented.
+                                                        <boolean>: true or false
+                                                        Default: true
 -comment-template <string>                              https://github.
                                                         com/tomasbjerre/violation-comments-lib
                                                         <string>: any string

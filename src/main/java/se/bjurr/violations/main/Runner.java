@@ -18,6 +18,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.stream.Collectors;
+
 import se.bjurr.violations.comments.bitbucketserver.lib.ViolationCommentsToBitbucketServerApi;
 import se.bjurr.violations.comments.lib.ViolationsLogger;
 import se.bjurr.violations.lib.model.SEVERITY;
@@ -32,6 +33,7 @@ public class Runner {
 
   private List<List<String>> violations;
   private boolean commentOnlyChangedContent;
+  private boolean commentOnlyChangedFiles;
   private boolean createCommentWithAllSingleFileComments;
   private boolean createSingleFileComments;
   private SEVERITY minSeverity;
@@ -82,6 +84,12 @@ public class Runner {
 
     final Argument<Boolean> commentOnlyChangedContentArg =
         booleanArgument("-comment-only-changed-content", "-cocc").defaultValue(true).build();
+    final Argument<Boolean> commentOnlyChangedFilesArg =
+            booleanArgument("-comment-only-changed-files", "-cocf")
+                .defaultValue(true)
+                .description(
+                    "True if only changed files should be commented. False if all findings should be commented.")
+                .build();
     final Argument<Boolean> createCommentWithAllSingleFileCommentsArg =
         booleanArgument("-create-comment-with-all-single-file-comments", "-ccwasfc")
             .defaultValue(false)
@@ -151,6 +159,7 @@ public class Runner {
       this.violations = parsed.get(violationsArg);
       this.minSeverity = parsed.get(minSeverityArg);
       this.commentOnlyChangedContent = parsed.get(commentOnlyChangedContentArg);
+      this.commentOnlyChangedFiles = parsed.get(commentOnlyChangedFilesArg);
       this.createCommentWithAllSingleFileComments =
           parsed.get(createCommentWithAllSingleFileCommentsArg);
       this.createSingleFileComments = parsed.get(createSingleFileCommentsArg);
@@ -235,6 +244,7 @@ public class Runner {
           .withCreateSingleFileComments(createSingleFileComments) //
           .withCreateSingleFileCommentsTasks(createSingleFileCommentsTasks) //
           .withCommentOnlyChangedContent(commentOnlyChangedContent) //
+          .withShouldCommentOnlyChangedFiles(commentOnlyChangedFiles)//
           .withCommentOnlyChangedContentContext(commentOnlyChangedContentContext) //
           .withShouldKeepOldComments(keepOldComments) //
           .withCommentTemplate(commentTemplate) //
