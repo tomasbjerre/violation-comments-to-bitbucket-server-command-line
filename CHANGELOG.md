@@ -3,6 +3,20 @@
 
 Changelog of Violation comments to bitbucket server command line.
 
+## 1.6
+### No issue
+
+**commentOnlyChangedFiles**
+
+
+[5a75d6f8c5082bc](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/5a75d6f8c5082bc) Tomas Bjerre *2019-06-16 17:09:54*
+
+**changelog**
+
+
+[b1d48b0d8a46e2e](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/b1d48b0d8a46e2e) Tomas Bjerre *2019-06-15 19:18:13*
+
+
 ## 1.5
 ### No issue
 
