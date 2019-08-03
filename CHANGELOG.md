@@ -3,6 +3,15 @@
 
 Changelog of Violation comments to bitbucket server command line.
 
+## 1.7
+### No issue
+
+**Changing name of JSHINT parser to JSLINT**
+
+
+[937eca592cca31b](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/937eca592cca31b) Tomas Bjerre *2019-08-03 11:19:19*
+
+
 ## 1.6
 ### No issue
 
