@@ -134,6 +134,7 @@ public class Runner {
                   minSeverityArg, //
                   showDebugInfo, //
                   commentOnlyChangedContentArg, //
+                  commentOnlyChangedFilesArg //
                   createCommentWithAllSingleFileCommentsArg, //
                   createSingleFileCommentsArg, //
                   keepOldCommentsArg, //
