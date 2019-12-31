@@ -3,6 +3,31 @@
 
 Changelog of Violation comments to bitbucket server command line.
 
+## 1.8
+### No issue
+
+**doc**
+
+
+[f628fad79aa7e8a](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/f628fad79aa7e8a) Tomas Bjerre *2020-12-31 06:48:03*
+
+**Add missing argument to withArguments function**
+
+ * Fix for https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/issues/1 
+
+[ceb66b06be0ada0](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/ceb66b06be0ada0) Zakey Faieq *2020-12-30 21:08:33*
+
+**doc**
+
+
+[b39f06d346771f8](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/b39f06d346771f8) Tomas Bjerre *2019-10-09 17:01:49*
+
+**Create FUNDING.yml**
+
+
+[568dc05580dafc4](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/568dc05580dafc4) Tomas Bjerre *2019-09-28 07:03:16*
+
+
 ## 1.7
 ### No issue
 
