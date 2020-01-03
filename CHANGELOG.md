@@ -3,6 +3,15 @@
 
 Changelog of Violation comments to bitbucket server command line.
 
+## 1.9
+### GitHub #80   
+
+**Add support for sonar issue report formats >= v7.5 tomasbjerre/violations-lib**
+
+
+[d1d45d76d1b1731](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/d1d45d76d1b1731) Tomas Bjerre *2020-01-03 07:17:05*
+
+
 ## 1.8
 ### No issue
 
