@@ -3,6 +3,15 @@
 
 Changelog of Violation comments to bitbucket server command line.
 
+## 1.10
+### GitHub #82   
+
+**CPPCheckParser with auto closed <error/> tags tomasbjerre/violations-lib**
+
+
+[63dd98c3a8fc502](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/63dd98c3a8fc502) Tomas Bjerre *2020-02-03 16:23:34*
+
+
 ## 1.9
 ### GitHub #80   
 
