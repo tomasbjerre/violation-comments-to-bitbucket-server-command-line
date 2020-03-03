@@ -3,6 +3,15 @@
 
 Changelog of Violation comments to bitbucket server command line.
 
+## 1.11
+### GitHub #84   
+
+**XUnit tomasbjerre/violations-lib**
+
+
+[fafb026775b1a11](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/fafb026775b1a11) Tomas Bjerre *2020-03-03 16:53:49*
+
+
 ## 1.10
 ### GitHub #82   
 
