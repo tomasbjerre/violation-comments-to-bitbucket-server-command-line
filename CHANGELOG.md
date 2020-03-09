@@ -3,6 +3,15 @@
 
 Changelog of Violation comments to bitbucket server command line.
 
+## 1.12
+### GitHub #69   
+
+**More logging jenkinsci/violation-comments-to-stash-plugin**
+
+
+[57fbefe52b40bf8](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/57fbefe52b40bf8) Tomas Bjerre *2020-03-09 18:08:32*
+
+
 ## 1.11
 ### GitHub #84   
 
