@@ -3,6 +3,15 @@
 
 Changelog of Violation comments to bitbucket server command line.
 
+## 1.13
+### GitHub #69   
+
+**Removing tabs jenkinsci/violation-comments-to-stash-plugin**
+
+
+[969f6b7d051498c](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/969f6b7d051498c) Tomas Bjerre *2020-03-10 15:32:51*
+
+
 ## 1.12
 ### GitHub #69   
 
