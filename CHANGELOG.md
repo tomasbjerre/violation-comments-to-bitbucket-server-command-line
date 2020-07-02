@@ -3,6 +3,15 @@
 
 Changelog of Violation comments to bitbucket server command line.
 
+## 1.14
+### No issue
+
+**Fix: avoiding trying to delete twice causing NPE in server log**
+
+
+[3fecba570f8e926](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/3fecba570f8e926) Tomas Bjerre *2020-07-02 17:29:46*
+
+
 ## 1.13
 ### GitHub #69   
 
