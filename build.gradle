@@ -27,8 +27,8 @@ apply from: project.buildscript.classLoader.getResource('violations.gradle').toU
 
 
 dependencies {
- compile 'se.bjurr.violations:violation-comments-to-bitbucket-server-lib:1.92'
- compile 'se.bjurr.violations:violations-lib:1.111'
+ compile 'se.bjurr.violations:violation-comments-to-bitbucket-server-lib:1.93'
+ compile 'se.bjurr.violations:violations-lib:1.118'
  compile 'se.softhouse:jargo:0.1.1'
  compile 'org.slf4j:slf4j-simple:1.8.0-beta2'
 }
