@@ -263,18 +263,14 @@ public class Runner {
               new ViolationsLogger() {
                 @Override
                 public void log(final Level level, final String string) {
-                  if (level != Level.FINE || Runner.this.showDebugInfo) {
-                    System.out.println(level + " " + string);
-                  }
+                  System.out.println(level + " " + string);
                 }
 
                 @Override
                 public void log(final Level level, final String string, final Throwable t) {
-                  if (level != Level.FINE || Runner.this.showDebugInfo) {
-                    final StringWriter sw = new StringWriter();
-                    t.printStackTrace(new PrintWriter(sw));
-                    System.out.println(level + " " + string + "\n" + sw.toString());
-                  }
+                  final StringWriter sw = new StringWriter();
+                  t.printStackTrace(new PrintWriter(sw));
+                  System.out.println(level + " " + string + "\n" + sw.toString());
                 }
               }) //
           .toPullRequest();
