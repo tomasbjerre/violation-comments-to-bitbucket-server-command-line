@@ -3,6 +3,15 @@
 
 Changelog of Violation comments to bitbucket server command line.
 
+## 1.16
+### No issue
+
+**New: logging**
+
+
+[9a2171ef165b926](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/9a2171ef165b926) Tomas Bjerre *2020-07-04 06:19:04*
+
+
 ## 1.15
 ### No issue
 
