@@ -13,13 +13,15 @@ import static se.softhouse.jargo.CommandLineParser.withArguments;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 import java.util.logging.Level;
 import java.util.stream.Collectors;
 import se.bjurr.violations.comments.bitbucketserver.lib.ViolationCommentsToBitbucketServerApi;
-import se.bjurr.violations.comments.lib.ViolationsLogger;
+import se.bjurr.violations.lib.FilteringViolationsLogger;
+import se.bjurr.violations.lib.ViolationsLogger;
 import se.bjurr.violations.lib.model.SEVERITY;
 import se.bjurr.violations.lib.model.Violation;
 import se.bjurr.violations.lib.reports.Parser;
@@ -199,10 +201,10 @@ public class Runner {
       System.exit(1);
     }
 
-    List<Violation> allParsedViolations = new ArrayList<>();
+    Set<Violation> allParsedViolations = new TreeSet<>();
     for (final List<String> configuredViolation : this.violations) {
       final String reporter = configuredViolation.size() >= 4 ? configuredViolation.get(3) : null;
-      final List<Violation> parsedViolations =
+      final Set<Violation> parsedViolations =
           violationsApi() //
               .findAll(Parser.valueOf(configuredViolation.get(0))) //
               .inFolder(configuredViolation.get(1)) //
@@ -243,36 +245,39 @@ public class Runner {
             .withPersonalAccessToken(this.personalAccessToken);
       }
 
-      violationCommentsToBitbucketServerApi //
-          .withBitbucketServerUrl(this.bitbucketServerUrl) //
-          .withPullRequestId(this.pullRequestId) //
-          .withProjectKey(this.projectKey) //
-          .withRepoSlug(this.repoSlug) //
-          .withViolations(allParsedViolations) //
-          .withCreateCommentWithAllSingleFileComments(
-              this.createCommentWithAllSingleFileComments) //
-          .withCreateSingleFileComments(this.createSingleFileComments) //
-          .withCreateSingleFileCommentsTasks(this.createSingleFileCommentsTasks) //
-          .withCommentOnlyChangedContent(this.commentOnlyChangedContent) //
-          .withShouldCommentOnlyChangedFiles(this.commentOnlyChangedFiles) //
-          .withCommentOnlyChangedContentContext(this.commentOnlyChangedContentContext) //
-          .withShouldKeepOldComments(this.keepOldComments) //
-          .withCommentTemplate(this.commentTemplate) //
-          .withMaxNumberOfViolations(this.maxNumberOfViolations) //
-          .withViolationsLogger(
-              new ViolationsLogger() {
-                @Override
-                public void log(final Level level, final String string) {
-                  System.out.println(level + " " + string);
-                }
+      ViolationsLogger violationsLogger =
+          new ViolationsLogger() {
+            @Override
+            public void log(final Level level, final String string) {
+              System.out.println(level + " " + string);
+            }
 
-                @Override
-                public void log(final Level level, final String string, final Throwable t) {
-                  final StringWriter sw = new StringWriter();
-                  t.printStackTrace(new PrintWriter(sw));
-                  System.out.println(level + " " + string + "\n" + sw.toString());
-                }
-              }) //
+            @Override
+            public void log(final Level level, final String string, final Throwable t) {
+              final StringWriter sw = new StringWriter();
+              t.printStackTrace(new PrintWriter(sw));
+              System.out.println(level + " " + string + "\n" + sw.toString());
+            }
+          };
+      if (!this.showDebugInfo) {
+        violationsLogger = FilteringViolationsLogger.filterLevel(violationsLogger);
+      }
+      violationCommentsToBitbucketServerApi
+          .withBitbucketServerUrl(this.bitbucketServerUrl)
+          .withPullRequestId(this.pullRequestId)
+          .withProjectKey(this.projectKey)
+          .withRepoSlug(this.repoSlug)
+          .withViolations(allParsedViolations)
+          .withCreateCommentWithAllSingleFileComments(this.createCommentWithAllSingleFileComments)
+          .withCreateSingleFileComments(this.createSingleFileComments)
+          .withCreateSingleFileCommentsTasks(this.createSingleFileCommentsTasks)
+          .withCommentOnlyChangedContent(this.commentOnlyChangedContent)
+          .withShouldCommentOnlyChangedFiles(this.commentOnlyChangedFiles)
+          .withCommentOnlyChangedContentContext(this.commentOnlyChangedContentContext)
+          .withShouldKeepOldComments(this.keepOldComments)
+          .withCommentTemplate(this.commentTemplate)
+          .withMaxNumberOfViolations(this.maxNumberOfViolations)
+          .withViolationsLogger(violationsLogger) //
           .toPullRequest();
     } catch (final Exception e) {
       e.printStackTrace();
