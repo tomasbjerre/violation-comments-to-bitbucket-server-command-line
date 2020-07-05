@@ -201,11 +201,30 @@ public class Runner {
       System.exit(1);
     }
 
+    ViolationsLogger violationsLogger =
+        new ViolationsLogger() {
+          @Override
+          public void log(final Level level, final String string) {
+            System.out.println(level + " " + string);
+          }
+
+          @Override
+          public void log(final Level level, final String string, final Throwable t) {
+            final StringWriter sw = new StringWriter();
+            t.printStackTrace(new PrintWriter(sw));
+            System.out.println(level + " " + string + "\n" + sw.toString());
+          }
+        };
+    if (!this.showDebugInfo) {
+      violationsLogger = FilteringViolationsLogger.filterLevel(violationsLogger);
+    }
+
     Set<Violation> allParsedViolations = new TreeSet<>();
     for (final List<String> configuredViolation : this.violations) {
       final String reporter = configuredViolation.size() >= 4 ? configuredViolation.get(3) : null;
       final Set<Violation> parsedViolations =
           violationsApi() //
+              .withViolationsLogger(violationsLogger) //
               .findAll(Parser.valueOf(configuredViolation.get(0))) //
               .inFolder(configuredViolation.get(1)) //
               .withPattern(configuredViolation.get(2)) //
@@ -245,23 +264,6 @@ public class Runner {
             .withPersonalAccessToken(this.personalAccessToken);
       }
 
-      ViolationsLogger violationsLogger =
-          new ViolationsLogger() {
-            @Override
-            public void log(final Level level, final String string) {
-              System.out.println(level + " " + string);
-            }
-
-            @Override
-            public void log(final Level level, final String string, final Throwable t) {
-              final StringWriter sw = new StringWriter();
-              t.printStackTrace(new PrintWriter(sw));
-              System.out.println(level + " " + string + "\n" + sw.toString());
-            }
-          };
-      if (!this.showDebugInfo) {
-        violationsLogger = FilteringViolationsLogger.filterLevel(violationsLogger);
-      }
       violationCommentsToBitbucketServerApi
           .withBitbucketServerUrl(this.bitbucketServerUrl)
           .withPullRequestId(this.pullRequestId)
