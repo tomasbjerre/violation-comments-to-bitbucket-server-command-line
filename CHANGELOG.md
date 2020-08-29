@@ -3,6 +3,25 @@
 
 Changelog of Violation comments to bitbucket server command line.
 
+## 1.19
+### No issue
+
+**doc**
+
+
+[ba1cb441a9a9822](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/ba1cb441a9a9822) Tomas Bjerre *2020-08-29 14:07:34*
+
+**update lib version**
+
+
+[0c6c6155a75dd17](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/0c6c6155a75dd17) Anirudh Bagri *2020-08-29 13:57:34*
+
+**add support for certifiacte authentication using latest violation lib library**
+
+
+[c673d847ac7c216](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/c673d847ac7c216) Anirudh Bagri *2020-08-29 13:44:22*
+
+
 ## 1.18
 ### No issue
 
