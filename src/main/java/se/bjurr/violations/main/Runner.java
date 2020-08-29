@@ -122,8 +122,10 @@ public class Runner {
     final Argument<String> passwordArg = stringArgument("-password").defaultValue("").build();
     final Argument<String> personalAccessTokenArg =
         stringArgument("-personal-access-token", "-pat").defaultValue("").build();
-    final Argument<String> keyStorePathArg = stringArgument("-keystore-path").defaultValue("").build();
-    final Argument<String> keyStorePassArg = stringArgument("-keystore-pass").defaultValue("changeit").build();
+    final Argument<String> keyStorePathArg =
+        stringArgument("-keystore-path").defaultValue("").build();
+    final Argument<String> keyStorePassArg =
+        stringArgument("-keystore-pass").defaultValue("changeit").build();
     final Argument<Boolean> createSingleFileCommentsTasksArg =
         booleanArgument("-create-single-file-comments-tasks", "-csfct").defaultValue(false).build();
     final Argument<Integer> commentOnlyChangedContentContextArg =
@@ -263,10 +265,10 @@ public class Runner {
           .withProxyPassword(this.proxyPass);
     }
     try {
-      if(!this.keyStorePath.isEmpty()) {
+      if (!this.keyStorePath.isEmpty()) {
         violationCommentsToBitbucketServerApi //
-                .withKeyStorePath(this.keyStorePath) //
-                .withKeyStorePass(this.keyStorePass);
+            .withKeyStorePath(this.keyStorePath) //
+            .withKeyStorePass(this.keyStorePass);
       } else if (!this.username.isEmpty()) {
         violationCommentsToBitbucketServerApi //
             .withUsername(this.username) //

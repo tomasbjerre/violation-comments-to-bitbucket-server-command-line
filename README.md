@@ -143,6 +143,10 @@ ccwasfc <boolean>                                       Default: false
                                                         Default: If no specific parameter is given the whole usage text is given
 -keep-old-comments <boolean>                            <boolean>: true or false
                                                         Default: false
+-keystore-pass <string>                                 <string>: any string
+                                                        Default: changeit
+-keystore-path <string>                                 <string>: any string
+                                                        Default: 
 -max-number-of-violations, -max <integer>               <integer>: -2,147,483,648 to 2,147,483,647
                                                         Default: 2,147,483,647
 -password <string>                                      <string>: any string
@@ -180,15 +184,16 @@ ccwasfc <boolean>                                       Default: false
                                                         CLANG, CPD, CPPCHECK, 
                                                         CPPLINT, CSSLINT, FINDBUGS, 
                                                         FLAKE8, FXCOP, GENDARME, IAR, 
-                                                        JCREPORT, JSHINT, LINT, 
+                                                        JCREPORT, JSLINT, JUNIT, LINT, 
                                                         KLOCWORK, KOTLINMAVEN, 
                                                         KOTLINGRADLE, MSCPP, MYPY, GOLINT, 
                                                         GOOGLEERRORPRONE, PERLCRITIC, PITEST, 
-                                                        PMD, PYDOCSTYLE, PYLINT, 
-                                                        RESHARPER, SBTSCALAC, SIMIAN, 
-                                                        SONAR, STYLECOP, XMLLINT, 
-                                                        YAMLLINT, ZPTLINT, DOCFX, PCLINT
-                                                        
+                                                        PMD, PROTOLINT, PYDOCSTYLE, 
+                                                        PYLINT, RESHARPER, SBTSCALAC, 
+                                                        SIMIAN, SONAR, STYLECOP, 
+                                                        XMLLINT, YAMLLINT, ZPTLINT, 
+                                                        DOCFX, PCLINT, CODECLIMATE, 
+                                                        XUNIT
                                                          Example: -v "JSHINT" 
                                                         "." ".*/jshint.xml$" 
                                                         "JSHint" [Supports Multiple occurrences]
