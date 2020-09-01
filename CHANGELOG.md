@@ -3,6 +3,15 @@
 
 Changelog of Violation comments to bitbucket server command line.
 
+## 1.20
+### GitHub #14   
+
+**VIOLATIONS_KEYSTORE_PATH tomasbjerre/violation-comments-to-bitbucket-server-lib**
+
+
+[190417259002408](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/190417259002408) Tomas Bjerre *2020-09-01 14:32:41*
+
+
 ## 1.19
 ### No issue
 
