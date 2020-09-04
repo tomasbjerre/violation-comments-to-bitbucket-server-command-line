@@ -3,6 +3,15 @@
 
 Changelog of Violation comments to bitbucket server command line.
 
+## 1.21
+### No issue
+
+**Support JUNI reports without message**
+
+
+[cf59d1736f7cdbe](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/cf59d1736f7cdbe) Tomas Bjerre *2020-09-04 15:45:32*
+
+
 ## 1.20
 ### GitHub #14   
 
