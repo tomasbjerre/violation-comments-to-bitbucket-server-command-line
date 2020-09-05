@@ -3,6 +3,15 @@
 
 Changelog of Violation comments to bitbucket server command line.
 
+## 1.22
+### No issue
+
+**adjusting message of junit parser**
+
+
+[a154720fa85d675](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/a154720fa85d675) Tomas Bjerre *2020-09-05 06:39:11*
+
+
 ## 1.21
 ### No issue
 
