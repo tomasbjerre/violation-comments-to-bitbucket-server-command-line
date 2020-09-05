@@ -1,7 +1,8 @@
 sudo: false
 language: java
 jdk:
-  - oraclejdk11
+  - openjdk11
+  - openjdk8
 script:
   - ./gradlew build --stacktrace -i
 after_script:
