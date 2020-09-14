@@ -3,6 +3,20 @@
 
 Changelog of Violation comments to bitbucket server command line.
 
+## 1.23
+### No issue
+
+**Generic parser**
+
+
+[cad8315bd87db22](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/cad8315bd87db22) Tomas Bjerre *2020-09-14 16:15:56*
+
+**Travis with openjdk8**
+
+
+[4781eb9c078e998](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/4781eb9c078e998) Tomas Bjerre *2020-09-05 07:02:12*
+
+
 ## 1.22
 ### No issue
 
