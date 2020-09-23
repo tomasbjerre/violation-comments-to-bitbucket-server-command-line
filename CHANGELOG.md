@@ -3,6 +3,15 @@
 
 Changelog of Violation comments to bitbucket server command line.
 
+## 1.27
+### No issue
+
+**Allow Checkstyle reports with no line**
+
+
+[8cb0436947300b4](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/8cb0436947300b4) Tomas Bjerre *2020-09-23 16:55:26*
+
+
 ## 1.23
 ### No issue
 
