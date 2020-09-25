@@ -3,6 +3,15 @@
 
 Changelog of Violation comments to bitbucket server command line.
 
+## 1.28
+### No issue
+
+**Supporting jest-junit**
+
+
+[3465ff01e666ef1](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/3465ff01e666ef1) Tomas Bjerre *2020-09-25 18:55:32*
+
+
 ## 1.27
 ### No issue
 
