@@ -3,6 +3,15 @@
 
 Changelog of Violation comments to bitbucket server command line.
 
+## 1.29
+### No issue
+
+**Rewriting parsers**
+
+
+[e9f0e4a673244ea](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/e9f0e4a673244ea) Tomas Bjerre *2020-09-27 15:47:39*
+
+
 ## 1.28
 ### No issue
 
