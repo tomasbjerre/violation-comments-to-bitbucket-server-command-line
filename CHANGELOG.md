@@ -3,6 +3,15 @@
 
 Changelog of Violation comments to bitbucket server command line.
 
+## 1.30
+### GitHub #101   
+
+**Rewriting PiTestParser parser**
+
+
+[2b7d2ef9db922b5](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/2b7d2ef9db922b5) Tomas Bjerre *2020-09-27 16:27:23*
+
+
 ## 1.29
 ### No issue
 
