@@ -20,7 +20,6 @@ import java.util.Set;
 import java.util.TreeSet;
 import java.util.logging.Level;
 import java.util.stream.Collectors;
-
 import se.bjurr.violations.comments.bitbucketserver.lib.ViolationCommentsToBitbucketServerApi;
 import se.bjurr.violations.lib.FilteringViolationsLogger;
 import se.bjurr.violations.lib.ViolationsLogger;
@@ -249,7 +248,7 @@ public class Runner {
               .inFolder(configuredViolation.get(1)) //
               .withPattern(configuredViolation.get(2)) //
               .withReporter(reporter) //
-              .withIgnorePaths(this.ignorePaths)//
+              .withIgnorePaths(this.ignorePaths) //
               .violations();
       if (this.minSeverity != null) {
         allParsedViolations = Filtering.withAtLEastSeverity(allParsedViolations, this.minSeverity);
