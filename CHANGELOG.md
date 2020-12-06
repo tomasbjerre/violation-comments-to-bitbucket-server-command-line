@@ -3,6 +3,15 @@
 
 Changelog of Violation comments to bitbucket server command line.
 
+## 1.31
+### GitHub #72   
+
+**Making isIgnored public jenkinsci/violation-comments-to-stash-plugin**
+
+
+[4ec4adec5549b62](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/4ec4adec5549b62) Tomas Bjerre *2020-12-06 10:26:00*
+
+
 ## 1.30
 ### GitHub #101   
 
