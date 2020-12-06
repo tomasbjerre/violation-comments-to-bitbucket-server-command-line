@@ -142,6 +142,11 @@ ccwasfc <boolean>                                       Default: false
                                                         Default: false
 -h, --help <argument-to-print-help-for>                 <argument-to-print-help-for>: an argument to print help for
                                                         Default: If no specific parameter is given the whole usage text is given
+--ignorePaths, -i <string>                              Ignore given paths
+                                                         
+                                                        Example: -i node_modules [Supports Multiple occurrences]
+                                                        <string>: any string
+                                                        Default: Empty list
 -keep-old-comments <boolean>                            <boolean>: true or false
                                                         Default: false
 -keystore-pass <string>                                 <string>: any string
@@ -183,11 +188,12 @@ ccwasfc <boolean>                                       Default: false
                                                         PARSER is one of: 
                                                         ANDROIDLINT, CHECKSTYLE, CODENARC, 
                                                         CLANG, CPD, CPPCHECK, 
-                                                        CPPLINT, CSSLINT, FINDBUGS, 
-                                                        FLAKE8, FXCOP, GENDARME, IAR, 
-                                                        JCREPORT, JSLINT, JUNIT, LINT, 
-                                                        KLOCWORK, KOTLINMAVEN, 
-                                                        KOTLINGRADLE, MSCPP, MYPY, GOLINT, 
+                                                        CPPLINT, CSSLINT, GENERIC, 
+                                                        FINDBUGS, FLAKE8, FXCOP, 
+                                                        GENDARME, IAR, JCREPORT, JSLINT, 
+                                                        JUNIT, LINT, KLOCWORK, 
+                                                        KOTLINMAVEN, KOTLINGRADLE, MSCPP, 
+                                                        MYPY, GOLINT, 
                                                         GOOGLEERRORPRONE, PERLCRITIC, PITEST, 
                                                         PMD, PROTOLINT, PYDOCSTYLE, 
                                                         PYLINT, RESHARPER, SBTSCALAC, 

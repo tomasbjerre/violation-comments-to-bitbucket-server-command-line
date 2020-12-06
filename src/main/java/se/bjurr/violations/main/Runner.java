@@ -13,6 +13,7 @@ import static se.softhouse.jargo.CommandLineParser.withArguments;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
@@ -40,7 +41,7 @@ public class Runner {
   private SEVERITY minSeverity;
   private Boolean keepOldComments;
   private String commentTemplate;
-
+  private List<String> ignorePaths;
   private Integer pullRequestId;
   private String projectKey;
   private String repoSlug;
@@ -74,6 +75,12 @@ public class Runner {
                 "The violations to look for. <PARSER> <FOLDER> <REGEXP PATTERN> <NAME> where PARSER is one of: "
                     + parsersString
                     + "\n Example: -v \"JSHINT\" \".\" \".*/jshint.xml$\" \"JSHint\"")
+            .build();
+    final Argument<List<String>> ignorePathsArg =
+        stringArgument("--ignorePaths", "-i")
+            .repeated()
+            .description("Ignore given paths\n Example: -i node_modules")
+            .defaultValue(new ArrayList<String>())
             .build();
     final Argument<SEVERITY> minSeverityArg =
         enumArgument(SEVERITY.class, "-severity", "-s")
@@ -140,6 +147,7 @@ public class Runner {
           withArguments( //
                   helpArgument, //
                   violationsArg, //
+                  ignorePathsArg, //
                   minSeverityArg, //
                   showDebugInfoArg, //
                   commentOnlyChangedContentArg, //
@@ -168,6 +176,7 @@ public class Runner {
               .parse(args);
 
       this.violations = parsed.get(violationsArg);
+      this.ignorePaths = parsed.get(ignorePathsArg);
       this.minSeverity = parsed.get(minSeverityArg);
       this.commentOnlyChangedContent = parsed.get(commentOnlyChangedContentArg);
       this.commentOnlyChangedFiles = parsed.get(commentOnlyChangedFilesArg);
@@ -284,6 +293,7 @@ public class Runner {
           .withProjectKey(this.projectKey)
           .withRepoSlug(this.repoSlug)
           .withViolations(allParsedViolations)
+          .withIgnorePaths(this.ignorePaths)
           .withCreateCommentWithAllSingleFileComments(this.createCommentWithAllSingleFileComments)
           .withCreateSingleFileComments(this.createSingleFileComments)
           .withCreateSingleFileCommentsTasks(this.createSingleFileCommentsTasks)
@@ -306,6 +316,8 @@ public class Runner {
         + this.violations
         + ", commentOnlyChangedContent="
         + this.commentOnlyChangedContent
+        + ", commentOnlyChangedFiles="
+        + this.commentOnlyChangedFiles
         + ", createCommentWithAllSingleFileComments="
         + this.createCommentWithAllSingleFileComments
         + ", createSingleFileComments="
@@ -316,6 +328,8 @@ public class Runner {
         + this.keepOldComments
         + ", commentTemplate="
         + this.commentTemplate
+        + ", ignorePaths="
+        + this.ignorePaths
         + ", pullRequestId="
         + this.pullRequestId
         + ", projectKey="
@@ -348,6 +362,8 @@ public class Runner {
         + this.commentOnlyChangedContentContext
         + ", maxNumberOfViolations="
         + this.maxNumberOfViolations
+        + ", showDebugInfo="
+        + this.showDebugInfo
         + "]";
   }
 }
