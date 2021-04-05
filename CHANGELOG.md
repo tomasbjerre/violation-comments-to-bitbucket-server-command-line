@@ -1,7 +1,16 @@
 
- # Violation comments to bitbucket server command line changelog
+# violation-comments-to-bitbucket-server-command-line changelog
 
-Changelog of Violation comments to bitbucket server command line.
+Changelog of violation-comments-to-bitbucket-server-command-line.
+
+## 1.34.0
+### No issue
+
+**new build script**
+
+
+[d436b16b05d3523](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/d436b16b05d3523) Tomas Bjerre *2021-04-05 12:04:50*
+
 
 ## 1.32
 ### GitHub #72   
@@ -217,7 +226,7 @@ Changelog of Violation comments to bitbucket server command line.
 
 **Add missing argument to withArguments function**
 
- * Fix for https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/issues/1 
+* Fix for https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/issues/1 
 
 [ceb66b06be0ada0](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/ceb66b06be0ada0) Zakey Faieq *2020-12-30 21:08:33*
 
@@ -291,4 +300,3 @@ Changelog of Violation comments to bitbucket server command line.
 [6aa34bd54369ceb](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/6aa34bd54369ceb) Tomas Bjerre *2019-06-01 15:34:07*
 
 
- 
