@@ -3,6 +3,15 @@
 
 Changelog of violation-comments-to-bitbucket-server-command-line.
 
+## 1.35.0
+### No issue
+
+**new build script**
+
+
+[45f30ffc072cc03](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/45f30ffc072cc03) Tomas Bjerre *2021-04-05 12:07:07*
+
+
 ## 1.34.0
 ### No issue
 
