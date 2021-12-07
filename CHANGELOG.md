@@ -2,6 +2,19 @@
 
 Changelog of violation-comments-to-bitbucket-server-command-line.
 
+## [1.38.0](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/releases/tag/1.38.0) (2021-12-07)
+
+
+
+### Features
+
+-  more parsers ([645a7](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/645a71b1f4a655d))  
+-  using npm-java-runner ([07533](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/07533cfca035404))  
+
+
+
+
+
 ## [1.37.0](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/releases/tag/1.37.0) (2021-06-16)
 
 
@@ -29,6 +42,7 @@ Changelog of violation-comments-to-bitbucket-server-command-line.
 
 [52ebf](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/52ebf4e5de3a214) Tomas Bjerre *2021-04-05 15:50:51*
 
+
 ## [1.35.0](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/releases/tag/1.35.0) (2021-04-05)
 
 
@@ -43,6 +57,7 @@ Changelog of violation-comments-to-bitbucket-server-command-line.
 
 
 [45f30](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/45f30ffc072cc03) Tomas Bjerre *2021-04-05 12:07:07*
+
 
 ## [1.34.0](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/releases/tag/1.34.0) (2021-04-05)
 
@@ -59,6 +74,7 @@ Changelog of violation-comments-to-bitbucket-server-command-line.
 
 [d436b](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/d436b16b05d3523) Tomas Bjerre *2021-04-05 12:04:50*
 
+
 ## [1.32](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/releases/tag/1.32) (2020-12-06)
 
 
@@ -73,6 +89,7 @@ Changelog of violation-comments-to-bitbucket-server-command-line.
 
 
 [b30f3](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/b30f3926e253ec6) Tomas Bjerre *2020-12-06 10:41:52*
+
 
 ## [1.31](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/releases/tag/1.31) (2020-12-06)
 
@@ -89,6 +106,7 @@ Changelog of violation-comments-to-bitbucket-server-command-line.
 
 [4ec4a](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/4ec4adec5549b62) Tomas Bjerre *2020-12-06 10:26:00*
 
+
 ## [1.30](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/releases/tag/1.30) (2020-09-27)
 
 
@@ -103,6 +121,7 @@ Changelog of violation-comments-to-bitbucket-server-command-line.
 
 
 [2b7d2](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/2b7d2ef9db922b5) Tomas Bjerre *2020-09-27 16:27:23*
+
 
 ## [1.29](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/releases/tag/1.29) (2020-09-27)
 
@@ -119,6 +138,7 @@ Changelog of violation-comments-to-bitbucket-server-command-line.
 
 [e9f0e](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/e9f0e4a673244ea) Tomas Bjerre *2020-09-27 15:47:39*
 
+
 ## [1.28](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/releases/tag/1.28) (2020-09-25)
 
 
@@ -133,6 +153,7 @@ Changelog of violation-comments-to-bitbucket-server-command-line.
 
 
 [3465f](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/3465ff01e666ef1) Tomas Bjerre *2020-09-25 18:55:32*
+
 
 ## [1.27](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/releases/tag/1.27) (2020-09-23)
 
@@ -149,6 +170,7 @@ Changelog of violation-comments-to-bitbucket-server-command-line.
 
 [8cb04](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/8cb0436947300b4) Tomas Bjerre *2020-09-23 16:55:26*
 
+
 ## [1.23](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/releases/tag/1.23) (2020-09-14)
 
 
@@ -163,10 +185,12 @@ Changelog of violation-comments-to-bitbucket-server-command-line.
 
 
 [cad83](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/cad8315bd87db22) Tomas Bjerre *2020-09-14 16:15:56*
+
 **Travis with openjdk8**
 
 
 [4781e](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/4781eb9c078e998) Tomas Bjerre *2020-09-05 07:02:12*
+
 
 ## [1.22](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/releases/tag/1.22) (2020-09-05)
 
@@ -183,6 +207,7 @@ Changelog of violation-comments-to-bitbucket-server-command-line.
 
 [a1547](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/a154720fa85d675) Tomas Bjerre *2020-09-05 06:39:11*
 
+
 ## [1.21](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/releases/tag/1.21) (2020-09-04)
 
 
@@ -197,6 +222,7 @@ Changelog of violation-comments-to-bitbucket-server-command-line.
 
 
 [cf59d](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/cf59d1736f7cdbe) Tomas Bjerre *2020-09-04 15:45:32*
+
 
 ## [1.20](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/releases/tag/1.20) (2020-09-01)
 
@@ -213,6 +239,7 @@ Changelog of violation-comments-to-bitbucket-server-command-line.
 
 [19041](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/190417259002408) Tomas Bjerre *2020-09-01 14:32:41*
 
+
 ## [1.19](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/releases/tag/1.19) (2020-08-29)
 
 
@@ -227,14 +254,17 @@ Changelog of violation-comments-to-bitbucket-server-command-line.
 
 
 [ba1cb](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/ba1cb441a9a9822) Tomas Bjerre *2020-08-29 14:07:34*
+
 **update lib version**
 
 
 [0c6c6](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/0c6c6155a75dd17) Anirudh Bagri *2020-08-29 13:57:34*
+
 **add support for certifiacte authentication using latest violation lib library**
 
 
 [c673d](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/c673d847ac7c216) Anirudh Bagri *2020-08-29 13:44:22*
+
 
 ## [1.18](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/releases/tag/1.18) (2020-07-05)
 
@@ -296,6 +326,7 @@ Changelog of violation-comments-to-bitbucket-server-command-line.
 
 [969f6](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/969f6b7d051498c) Tomas Bjerre *2020-03-10 15:32:51*
 
+
 ## [1.12](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/releases/tag/1.12) (2020-03-09)
 
 
@@ -310,6 +341,7 @@ Changelog of violation-comments-to-bitbucket-server-command-line.
 
 
 [57fbe](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/57fbefe52b40bf8) Tomas Bjerre *2020-03-09 18:08:32*
+
 
 ## [1.11](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/releases/tag/1.11) (2020-03-03)
 
@@ -326,6 +358,7 @@ Changelog of violation-comments-to-bitbucket-server-command-line.
 
 [fafb0](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/fafb026775b1a11) Tomas Bjerre *2020-03-03 16:53:49*
 
+
 ## [1.10](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/releases/tag/1.10) (2020-02-03)
 
 
@@ -340,6 +373,7 @@ Changelog of violation-comments-to-bitbucket-server-command-line.
 
 
 [63dd9](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/63dd98c3a8fc502) Tomas Bjerre *2020-02-03 16:23:34*
+
 
 ## [1.9](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/releases/tag/1.9) (2020-01-03)
 
@@ -356,6 +390,7 @@ Changelog of violation-comments-to-bitbucket-server-command-line.
 
 [d1d45](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/d1d45d76d1b1731) Tomas Bjerre *2020-01-03 07:17:05*
 
+
 ## [1.8](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/releases/tag/1.8) (2020-12-31)
 
 
@@ -370,19 +405,23 @@ Changelog of violation-comments-to-bitbucket-server-command-line.
 
 
 [f628f](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/f628fad79aa7e8a) Tomas Bjerre *2020-12-31 06:48:03*
+
 **Add missing argument to withArguments function**
 
 * Fix for https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/issues/1 
 
 [ceb66](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/ceb66b06be0ada0) Zakey Faieq *2020-12-30 21:08:33*
+
 **doc**
 
 
 [b39f0](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/b39f06d346771f8) Tomas Bjerre *2019-10-09 17:01:49*
+
 **Create FUNDING.yml**
 
 
 [568dc](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/568dc05580dafc4) Tomas Bjerre *2019-09-28 07:03:16*
+
 
 ## [1.7](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/releases/tag/1.7) (2019-08-03)
 
@@ -399,6 +438,7 @@ Changelog of violation-comments-to-bitbucket-server-command-line.
 
 [937ec](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/937eca592cca31b) Tomas Bjerre *2019-08-03 11:19:19*
 
+
 ## [1.6](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/releases/tag/1.6) (2019-06-16)
 
 
@@ -413,10 +453,12 @@ Changelog of violation-comments-to-bitbucket-server-command-line.
 
 
 [5a75d](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/5a75d6f8c5082bc) Tomas Bjerre *2019-06-16 17:09:54*
+
 **changelog**
 
 
 [b1d48](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/b1d48b0d8a46e2e) Tomas Bjerre *2019-06-15 19:18:13*
+
 
 ## [1.5](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/releases/tag/1.5) (2019-06-15)
 
@@ -433,6 +475,7 @@ Changelog of violation-comments-to-bitbucket-server-command-line.
 
 [46521](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/4652113b9962bff) Tomas Bjerre *2019-06-15 19:07:20*
 
+
 ## [1.4](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/releases/tag/1.4) (2019-06-01)
 
 
@@ -447,6 +490,7 @@ Changelog of violation-comments-to-bitbucket-server-command-line.
 
 
 [237be](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/237be4f40c4a140) Tomas Bjerre *2019-06-01 18:52:01*
+
 
 ## [1.3](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/releases/tag/1.3) (2019-06-01)
 
@@ -463,6 +507,7 @@ Changelog of violation-comments-to-bitbucket-server-command-line.
 
 [0f642](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/0f6427fde1a44b1) Tomas Bjerre *2019-06-01 17:58:11*
 
+
 ## [1.2](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/releases/tag/1.2) (2019-06-01)
 
 
@@ -477,5 +522,6 @@ Changelog of violation-comments-to-bitbucket-server-command-line.
 
 
 [6aa34](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/6aa34bd54369ceb) Tomas Bjerre *2019-06-01 15:34:07*
+
 
     
