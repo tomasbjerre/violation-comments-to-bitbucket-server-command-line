@@ -2,50 +2,32 @@
 
 Changelog of violation-comments-to-bitbucket-server-command-line.
 
+## 1.40.0 (2022-09-01)
+
+### Features
+
+-  stepping violations-lib ([d2ce0](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/d2ce00982ae4425) Tomas Bjerre)  
+
 ## 1.39.0 (2022-03-27)
-
-
 
 ### Features
 
 -  stepping lib versions ([e7425](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/e742585aafb2895) Tomas Bjerre)  
 
-
-
-
-
 ## 1.38.0 (2021-12-07)
-
-
 
 ### Features
 
 -  more parsers ([645a7](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/645a71b1f4a655d) Tomas Bjerre)  
 -  using npm-java-runner ([07533](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/07533cfca035404) Tomas Bjerre)  
 
-
-
-
-
 ## 1.37.0 (2021-06-16)
-
-
 
 ### Features
 
 -  MSBuild parser ([db3b3](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/db3b356ca8f66dd) Tomas Bjerre)  
 
-
-
-
-
 ## 1.36.0 (2021-04-05)
-
-
-
-
-
-
 
 ### Other changes
 
@@ -57,12 +39,6 @@ Changelog of violation-comments-to-bitbucket-server-command-line.
 
 ## 1.35.0 (2021-04-05)
 
-
-
-
-
-
-
 ### Other changes
 
 **new build script**
@@ -72,12 +48,6 @@ Changelog of violation-comments-to-bitbucket-server-command-line.
 
 
 ## 1.34.0 (2021-04-05)
-
-
-
-
-
-
 
 ### Other changes
 
@@ -89,12 +59,6 @@ Changelog of violation-comments-to-bitbucket-server-command-line.
 
 ## 1.32 (2020-12-06)
 
-
-
-
-
-
-
 ### Other changes
 
 **Making isIgnored public jenkinsci/violation-comments-to-stash-plugin#72**
@@ -104,12 +68,6 @@ Changelog of violation-comments-to-bitbucket-server-command-line.
 
 
 ## 1.31 (2020-12-06)
-
-
-
-
-
-
 
 ### Other changes
 
@@ -121,12 +79,6 @@ Changelog of violation-comments-to-bitbucket-server-command-line.
 
 ## 1.30 (2020-09-27)
 
-
-
-
-
-
-
 ### Other changes
 
 **Rewriting PiTestParser parser #101**
@@ -136,12 +88,6 @@ Changelog of violation-comments-to-bitbucket-server-command-line.
 
 
 ## 1.29 (2020-09-27)
-
-
-
-
-
-
 
 ### Other changes
 
@@ -153,12 +99,6 @@ Changelog of violation-comments-to-bitbucket-server-command-line.
 
 ## 1.28 (2020-09-25)
 
-
-
-
-
-
-
 ### Other changes
 
 **Supporting jest-junit**
@@ -169,12 +109,6 @@ Changelog of violation-comments-to-bitbucket-server-command-line.
 
 ## 1.27 (2020-09-23)
 
-
-
-
-
-
-
 ### Other changes
 
 **Allow Checkstyle reports with no line**
@@ -184,12 +118,6 @@ Changelog of violation-comments-to-bitbucket-server-command-line.
 
 
 ## 1.23 (2020-09-14)
-
-
-
-
-
-
 
 ### Other changes
 
@@ -206,12 +134,6 @@ Changelog of violation-comments-to-bitbucket-server-command-line.
 
 ## 1.22 (2020-09-05)
 
-
-
-
-
-
-
 ### Other changes
 
 **adjusting message of junit parser**
@@ -221,12 +143,6 @@ Changelog of violation-comments-to-bitbucket-server-command-line.
 
 
 ## 1.21 (2020-09-04)
-
-
-
-
-
-
 
 ### Other changes
 
@@ -238,12 +154,6 @@ Changelog of violation-comments-to-bitbucket-server-command-line.
 
 ## 1.20 (2020-09-01)
 
-
-
-
-
-
-
 ### Other changes
 
 **VIOLATIONS_KEYSTORE_PATH tomasbjerre/violation-comments-to-bitbucket-server-lib#14**
@@ -253,12 +163,6 @@ Changelog of violation-comments-to-bitbucket-server-command-line.
 
 
 ## 1.19 (2020-08-29)
-
-
-
-
-
-
 
 ### Other changes
 
@@ -280,56 +184,15 @@ Changelog of violation-comments-to-bitbucket-server-command-line.
 
 ## 1.18 (2020-07-05)
 
-
-
-
-
-
-
-
 ## 1.17 (2020-07-05)
-
-
-
-
-
-
-
 
 ## 1.16 (2020-07-04)
 
-
-
-
-
-
-
-
 ## 1.15 (2020-07-03)
-
-
-
-
-
-
-
 
 ## 1.14 (2020-07-02)
 
-
-
-
-
-
-
-
 ## 1.13 (2020-03-10)
-
-
-
-
-
-
 
 ### Other changes
 
@@ -341,12 +204,6 @@ Changelog of violation-comments-to-bitbucket-server-command-line.
 
 ## 1.12 (2020-03-09)
 
-
-
-
-
-
-
 ### Other changes
 
 **More logging jenkinsci/violation-comments-to-stash-plugin#69**
@@ -356,12 +213,6 @@ Changelog of violation-comments-to-bitbucket-server-command-line.
 
 
 ## 1.11 (2020-03-03)
-
-
-
-
-
-
 
 ### Other changes
 
@@ -373,12 +224,6 @@ Changelog of violation-comments-to-bitbucket-server-command-line.
 
 ## 1.10 (2020-02-03)
 
-
-
-
-
-
-
 ### Other changes
 
 **CPPCheckParser with auto closed <error/> tags tomasbjerre/violations-lib#82**
@@ -389,12 +234,6 @@ Changelog of violation-comments-to-bitbucket-server-command-line.
 
 ## 1.9 (2020-01-03)
 
-
-
-
-
-
-
 ### Other changes
 
 **Add support for sonar issue report formats >= v7.5 tomasbjerre/violations-lib#80**
@@ -404,12 +243,6 @@ Changelog of violation-comments-to-bitbucket-server-command-line.
 
 
 ## 1.8 (2019-12-31)
-
-
-
-
-
-
 
 ### Other changes
 
@@ -437,12 +270,6 @@ Changelog of violation-comments-to-bitbucket-server-command-line.
 
 ## 1.7 (2019-08-03)
 
-
-
-
-
-
-
 ### Other changes
 
 **Changing name of JSHINT parser to JSLINT**
@@ -452,12 +279,6 @@ Changelog of violation-comments-to-bitbucket-server-command-line.
 
 
 ## 1.6 (2019-06-16)
-
-
-
-
-
-
 
 ### Other changes
 
@@ -474,12 +295,6 @@ Changelog of violation-comments-to-bitbucket-server-command-line.
 
 ## 1.5 (2019-06-15)
 
-
-
-
-
-
-
 ### Other changes
 
 **Artity 4 on -v**
@@ -489,12 +304,6 @@ Changelog of violation-comments-to-bitbucket-server-command-line.
 
 
 ## 1.4 (2019-06-01)
-
-
-
-
-
-
 
 ### Other changes
 
@@ -506,12 +315,6 @@ Changelog of violation-comments-to-bitbucket-server-command-line.
 
 ## 1.3 (2019-06-01)
 
-
-
-
-
-
-
 ### Other changes
 
 **doc**
@@ -522,12 +325,6 @@ Changelog of violation-comments-to-bitbucket-server-command-line.
 
 ## 1.2 (2019-06-01)
 
-
-
-
-
-
-
 ### Other changes
 
 **doc**
@@ -537,12 +334,6 @@ Changelog of violation-comments-to-bitbucket-server-command-line.
 
 
 ## 1.0 (2019-06-01)
-
-
-
-
-
-
 
 ### Other changes
 
