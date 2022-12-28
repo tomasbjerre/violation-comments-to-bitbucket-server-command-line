@@ -2,6 +2,18 @@
 
 Changelog of violation-comments-to-bitbucket-server-command-line.
 
+## 1.40.2 (2022-12-28)
+
+### Bug Fixes
+
+-  faulty release script... ([8108a](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/8108a43fc2aae1b) Tomas Bjerre)  
+
+## 1.40.1 (2022-12-28)
+
+### Bug Fixes
+
+-  stepping dependencies ([240a5](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/240a5dc21cd8b76) Tomas Bjerre)  
+
 ## 1.40.0 (2022-09-01)
 
 ### Features
