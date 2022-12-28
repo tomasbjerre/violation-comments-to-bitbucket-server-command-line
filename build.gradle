@@ -28,8 +28,8 @@ apply from: project.buildscript.classLoader.getResource('main.gradle').toURI()
 
 
 dependencies {
- implementation 'se.bjurr.violations:violation-comments-to-bitbucket-server-lib:1.+'
- implementation 'se.bjurr.violations:violations-lib:1.155.1'
+ implementation 'se.bjurr.violations:violation-comments-to-bitbucket-server-lib:1.101.4'
+ implementation 'se.bjurr.violations:violations-lib:1.155.3'
  implementation 'se.softhouse:jargo:0.4.14'
- implementation 'org.slf4j:slf4j-simple:2.0.0'
+ implementation 'org.slf4j:slf4j-simple:2.0.6'
 }
