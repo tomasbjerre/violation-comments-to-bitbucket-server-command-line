@@ -2,12 +2,16 @@
 
 [![NPM](https://img.shields.io/npm/v/violation-comments-to-bitbucket-server-command-line.svg?style=flat-square) ](https://www.npmjs.com/package/violation-comments-to-bitbucket-server-command-line)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/se.bjurr.violations/violation-comments-to-bitbucket-server-command-line/badge.svg)](https://maven-badges.herokuapp.com/maven-central/se.bjurr.violations/violation-comments-to-bitbucket-server-command-line)
+[![NPM Downloads](https://img.shields.io/npm/dm/violation-comments-to-bitbucket-server-command-line.svg?style=flat)](https://www.npmjs.com/package/violation-comments-to-bitbucket-server-command-line)
+[![Docker Pulls](https://badgen.net/docker/pulls/tomasbjerre/violation-comments-to-bitbucket-server-command-line?icon=docker&label=pulls)](https://hub.docker.com/r/tomasbjerre/violation-comments-to-bitbucket-server-command-line/)
 
 Report static code analysis to Bitbucket Server. It uses the [Violations Lib](https://github.com/tomasbjerre/violations-lib).
 
 ![Bitbucket Server Comment](/bitbucket-server-comment.png)
 
-The runnable can be found in [NPM](https://www.npmjs.com/package/violation-comments-to-bitbucket-server-command-line).
+- The runnable `jar` can be found in [Maven Central](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22violation-comments-to-bitbucket-server-command-line%22) and used like `java -jar violation-comments-to-bitbucket-server-command-line-*.jar ....`.
+- The runnable can be found in [NPM](https://www.npmjs.com/package/violation-comments-to-bitbucket-server-command-line).
+- The `Docker` image can be found in [Dockerhub](https://hub.docker.com/r/tomasbjerre/violation-comments-to-bitbucket-server-command-line) and used like `docker run --mount src="$(pwd)",target=/usr/src/violation-comments-to-bitbucket-server-command-line,type=bind tomasbjerre/violation-comments-to-bitbucket-server-command-line:X`.
 
 Run it with:
 
