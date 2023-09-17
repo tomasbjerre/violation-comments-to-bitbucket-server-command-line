@@ -2,6 +2,12 @@
 
 Changelog of violation-comments-to-bitbucket-server-command-line.
 
+## 1.41.1 (2023-09-17)
+
+### Bug Fixes
+
+-  allow MSBuild in Program Files (x86) and support NU1701 ([2c88d](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/2c88d2bfdbc0d54) Tomas Bjerre)  
+
 ## 1.41.0 (2023-03-26)
 
 ### Features
