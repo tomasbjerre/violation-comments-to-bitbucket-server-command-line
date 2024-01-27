@@ -2,6 +2,12 @@
 
 Changelog of violation-comments-to-bitbucket-server-command-line.
 
+## 2.0.0 (2024-01-27)
+
+### Breaking changes
+
+-  JsonPath 2.9.0, Gson 2.10 and Java 11 ([74d0f](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/74d0f5e7d1b87d4) Tomas Bjerre)  
+
 ## 1.41.1 (2023-09-17)
 
 ### Bug Fixes
