@@ -2,6 +2,12 @@
 
 Changelog of violation-comments-to-bitbucket-server-command-line.
 
+## 2.1.0 (2024-03-24)
+
+### Features
+
+-  coverity parser ([dfa14](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/dfa148a29ea772a) Tomas Bjerre)  
+
 ## 2.0.0 (2024-01-27)
 
 ### Breaking changes
