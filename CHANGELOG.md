@@ -2,6 +2,12 @@
 
 Changelog of violation-comments-to-bitbucket-server-command-line.
 
+## 2.1.1 (2024-04-02)
+
+### Bug Fixes
+
+-  avoid repeated message in the Coverity parser ([40afc](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/40afcf22cc7813a) Tomas Bjerre)  
+
 ## 2.1.0 (2024-03-24)
 
 ### Features
