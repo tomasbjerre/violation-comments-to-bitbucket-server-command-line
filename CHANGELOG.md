@@ -1,3 +1,10 @@
+## Unreleased ()
+
+### Features
+
+-  dependencies ([cca66](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/cca665e52f0afbd) Tomas Bjerre)  
+-  new build script ([29493](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/29493a7433c18be) Tomas Bjerre)  
+
 ## 2.1.1 (2024-04-02)
 
 ### Bug Fixes
