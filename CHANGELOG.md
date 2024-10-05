@@ -1,7 +1,3 @@
-# violation-comments-to-bitbucket-server-command-line changelog
-
-Changelog of violation-comments-to-bitbucket-server-command-line.
-
 ## 2.1.1 (2024-04-02)
 
 ### Bug Fixes

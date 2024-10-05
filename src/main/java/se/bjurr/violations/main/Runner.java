@@ -60,7 +60,7 @@ public class Runner {
   private Integer maxNumberOfViolations;
   private boolean showDebugInfo;
 
-  public void main(final String args[]) throws Exception {
+  public void main(final String... args) throws Exception {
     final Argument<?> helpArgument = helpArgument("-h", "--help");
     final String parsersString =
         Arrays.asList(Parser.values()).stream()
@@ -204,7 +204,7 @@ public class Runner {
 
       this.showDebugInfo = parsed.wasGiven(showDebugInfoArg);
       if (this.showDebugInfo) {
-        System.out.println(
+        System.out.println( // NOPMD
             "Given parameters:\n"
                 + Arrays.asList(args).stream()
                     .map((it) -> it.toString())
@@ -214,22 +214,22 @@ public class Runner {
       }
 
     } catch (final ArgumentException exception) {
-      System.out.println(exception.getMessageAndUsage());
-      System.exit(1);
+      System.out.println(exception.getMessageAndUsage()); // NOPMD
+      System.exit(1); // NOPMD
     }
 
     ViolationsLogger violationsLogger =
         new ViolationsLogger() {
           @Override
           public void log(final Level level, final String string) {
-            System.out.println(level + " " + string);
+            System.out.println(level + " " + string); // NOPMD
           }
 
           @Override
           public void log(final Level level, final String string, final Throwable t) {
             final StringWriter sw = new StringWriter();
             t.printStackTrace(new PrintWriter(sw));
-            System.out.println(level + " " + string + "\n" + sw.toString());
+            System.out.println(level + " " + string + "\n" + sw.toString()); // NOPMD
           }
         };
     if (!this.showDebugInfo) {
@@ -254,7 +254,7 @@ public class Runner {
       allParsedViolations.addAll(parsedViolations);
     }
 
-    System.out.println(
+    System.out.println( // NOPMD
         "PR: "
             + this.projectKey
             + "/"
@@ -305,7 +305,7 @@ public class Runner {
           .withViolationsLogger(violationsLogger) //
           .toPullRequest();
     } catch (final Exception e) {
-      e.printStackTrace();
+      e.printStackTrace(); // NOPMD
     }
   }
 
