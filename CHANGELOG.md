@@ -1,3 +1,9 @@
+## 2.3.0 (2025-09-28)
+
+### Features
+
+-  PMD CPD 7 ([95085](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/950855697401df4) Tomas Bjerre)  
+
 ## Unreleased ()
 
 ### Features
