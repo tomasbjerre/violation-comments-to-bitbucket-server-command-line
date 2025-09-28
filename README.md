@@ -12,7 +12,8 @@ Report static code analysis to Bitbucket Server. It uses the [Violations Lib](ht
 | Version           | Java Version |
 | ------------------| ------------ |
 | version < 2.0.0   | 8            |
-| 2.0.0 <= version  | 11           |
+| 2.0.0 -> 2.2.1    | 11           |
+| 2.3.0 <= version  | 17           |
 
 - The runnable `jar` can be found in [Maven Central](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22violation-comments-to-bitbucket-server-command-line%22) and used like `java -jar violation-comments-to-bitbucket-server-command-line-*.jar ....`.
 - The runnable can be found in [NPM](https://www.npmjs.com/package/violation-comments-to-bitbucket-server-command-line).
