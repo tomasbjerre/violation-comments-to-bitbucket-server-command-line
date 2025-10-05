@@ -1,3 +1,9 @@
+## 2.3.1 (2025-10-05)
+
+### Bug Fixes
+
+-  docfx message_severity ([b5358](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/b5358c4880ed410) Tomas Bjerre)  
+
 ## 2.3.0 (2025-09-28)
 
 ### Features
