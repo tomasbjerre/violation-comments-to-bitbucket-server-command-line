@@ -3,13 +3,6 @@ package se.bjurr.violations.main;
 import static se.bjurr.violations.comments.bitbucketserver.lib.ViolationCommentsToBitbucketServerApi.violationCommentsToBitbucketServerApi;
 import static se.bjurr.violations.lib.ViolationsApi.violationsApi;
 import static se.bjurr.violations.lib.model.SEVERITY.INFO;
-import static se.softhouse.jargo.Arguments.booleanArgument;
-import static se.softhouse.jargo.Arguments.enumArgument;
-import static se.softhouse.jargo.Arguments.helpArgument;
-import static se.softhouse.jargo.Arguments.integerArgument;
-import static se.softhouse.jargo.Arguments.optionArgument;
-import static se.softhouse.jargo.Arguments.stringArgument;
-import static se.softhouse.jargo.CommandLineParser.withArguments;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.io.PrintWriter;
@@ -21,6 +14,10 @@ import java.util.Set;
 import java.util.TreeSet;
 import java.util.logging.Level;
 import java.util.stream.Collectors;
+import picocli.CommandLine;
+import picocli.CommandLine.Command;
+import picocli.CommandLine.Option;
+import picocli.CommandLine.ParameterException;
 import se.bjurr.violations.comments.bitbucketserver.lib.ViolationCommentsToBitbucketServerApi;
 import se.bjurr.violations.lib.FilteringViolationsLogger;
 import se.bjurr.violations.lib.ViolationsLogger;
@@ -28,195 +25,145 @@ import se.bjurr.violations.lib.model.SEVERITY;
 import se.bjurr.violations.lib.model.Violation;
 import se.bjurr.violations.lib.reports.Parser;
 import se.bjurr.violations.lib.util.Filtering;
-import se.softhouse.jargo.Argument;
-import se.softhouse.jargo.ArgumentException;
-import se.softhouse.jargo.ParsedArguments;
 
+@Command(name = "violation-comments-to-bitbucket-server-command-line")
 public class Runner {
 
-  private List<List<String>> violations;
-  private boolean commentOnlyChangedContent;
-  private boolean commentOnlyChangedFiles;
-  private boolean createCommentWithAllSingleFileComments;
-  private boolean createSingleFileComments;
-  private SEVERITY minSeverity;
-  private Boolean keepOldComments;
-  private String commentTemplate;
-  private List<String> ignorePaths;
-  private Integer pullRequestId;
-  private String projectKey;
-  private String repoSlug;
-  private String bitbucketServerUrl;
-  private String proxyHost;
-  private Integer proxyPort;
-  private String proxyUser;
-  private String proxyPass;
-  private String username;
-  private String password;
-  private String personalAccessToken;
-  private String keyStorePath;
-  private String keyStorePass;
-  private boolean createSingleFileCommentsTasks;
-  private int commentOnlyChangedContentContext;
-  private Integer maxNumberOfViolations;
+  @Option(
+      names = {"-h", "--help"},
+      usageHelp = true,
+      description = "Show this help message and exit.")
+  private boolean help;
+
+  @Option(
+      names = {"--violations", "-v"},
+      arity = "4",
+      description =
+          "The violations to look for. <PARSER> <FOLDER> <REGEXP PATTERN> <NAME> where PARSER"
+              + " is one of the values of se.bjurr.violations.lib.reports.Parser (see supported"
+              + " formats table in README for the full list).\nExample: -v \"JSHINT\" \".\""
+              + " \".*/jshint.xml$\" \"JSHint\"")
+  private List<String> violations = new ArrayList<>();
+
+  @Option(
+      names = {"--ignorePaths", "-i"},
+      description = "Ignore given paths\nExample: -i node_modules")
+  private List<String> ignorePaths = new ArrayList<>();
+
+  @Option(
+      names = {"-severity", "-s"},
+      description = "Minimum severity level to report.")
+  private SEVERITY minSeverity = INFO;
+
+  @Option(
+      names = "-show-debug-info",
+      description = "Please run your command with this parameter and supply output when reporting bugs.")
   private boolean showDebugInfo;
 
+  @Option(names = {"-comment-only-changed-content", "-cocc"}, arity = "1")
+  private boolean commentOnlyChangedContent = true;
+
+  @Option(
+      names = {"-comment-only-changed-files", "-cocf"},
+      arity = "1",
+      description =
+          "True if only changed files should be commented. False if all findings should be commented.")
+  private boolean commentOnlyChangedFiles = true;
+
+  @Option(names = {"-create-comment-with-all-single-file-comments", "-ccwasfc"}, arity = "1")
+  private boolean createCommentWithAllSingleFileComments = false;
+
+  @Option(names = {"-create-single-file-comments", "-csfc"}, arity = "1")
+  private boolean createSingleFileComments = true;
+
+  @Option(names = "-keep-old-comments", arity = "1")
+  private Boolean keepOldComments = false;
+
+  @Option(
+      names = "-comment-template",
+      description = "https://github.com/tomasbjerre/violation-comments-lib")
+  private String commentTemplate = "";
+
+  @Option(
+      names = {"-pull-request-id", "-prid"},
+      required = true)
+  private Integer pullRequestId;
+
+  @Option(
+      names = {"-project-key", "-pk"},
+      required = true)
+  private String projectKey;
+
+  @Option(
+      names = {"-repo-slug", "-rs"},
+      required = true)
+  private String repoSlug;
+
+  @Option(
+      names = {"-server-url", "-url"},
+      required = true)
+  private String bitbucketServerUrl;
+
+  @Option(names = "-proxy-host")
+  private String proxyHost = "";
+
+  @Option(names = "-proxy-port")
+  private Integer proxyPort = 0;
+
+  @Option(names = "-proxy-user")
+  private String proxyUser = "";
+
+  @Option(names = "-proxy-password")
+  private String proxyPass = "";
+
+  @Option(names = "-username")
+  private String username = "";
+
+  @Option(names = "-password")
+  private String password = "";
+
+  @Option(names = {"-personal-access-token", "-pat"})
+  private String personalAccessToken = "";
+
+  @Option(names = "-keystore-path")
+  private String keyStorePath = "";
+
+  @Option(names = "-keystore-pass")
+  private String keyStorePass = "changeit";
+
+  @Option(names = {"-create-single-file-comments-tasks", "-csfct"}, arity = "1")
+  private boolean createSingleFileCommentsTasks = false;
+
+  @Option(names = {"-comment-only-changed-content-context", "-coccc"})
+  private int commentOnlyChangedContentContext = 5;
+
+  @Option(names = {"-max-number-of-violations", "-max"})
+  private Integer maxNumberOfViolations = Integer.MAX_VALUE;
+
   public void main(final String... args) throws Exception {
-    final Argument<?> helpArgument = helpArgument("-h", "--help");
-    final String parsersString =
-        Arrays.asList(Parser.values()).stream()
-            .map((it) -> it.toString())
-            .collect(Collectors.joining(", "));
-    final Argument<List<List<String>>> violationsArg =
-        stringArgument("--violations", "-v")
-            .arity(4)
-            .repeated()
-            .description(
-                "The violations to look for. <PARSER> <FOLDER> <REGEXP PATTERN> <NAME> where PARSER is one of: "
-                    + parsersString
-                    + "\n Example: -v \"JSHINT\" \".\" \".*/jshint.xml$\" \"JSHint\"")
-            .build();
-    final Argument<List<String>> ignorePathsArg =
-        stringArgument("--ignorePaths", "-i")
-            .repeated()
-            .description("Ignore given paths\n Example: -i node_modules")
-            .defaultValue(new ArrayList<String>())
-            .build();
-    final Argument<SEVERITY> minSeverityArg =
-        enumArgument(SEVERITY.class, "-severity", "-s")
-            .defaultValue(INFO)
-            .description("Minimum severity level to report.")
-            .build();
-    final Argument<Boolean> showDebugInfoArg =
-        optionArgument("-show-debug-info")
-            .description(
-                "Please run your command with this parameter and supply output when reporting bugs.")
-            .build();
-
-    final Argument<Boolean> commentOnlyChangedContentArg =
-        booleanArgument("-comment-only-changed-content", "-cocc").defaultValue(true).build();
-    final Argument<Boolean> commentOnlyChangedFilesArg =
-        booleanArgument("-comment-only-changed-files", "-cocf")
-            .defaultValue(true)
-            .description(
-                "True if only changed files should be commented. False if all findings should be commented.")
-            .build();
-    final Argument<Boolean> createCommentWithAllSingleFileCommentsArg =
-        booleanArgument("-create-comment-with-all-single-file-comments", "-ccwasfc")
-            .defaultValue(false)
-            .build();
-    final Argument<Boolean> createSingleFileCommentsArg =
-        booleanArgument("-create-single-file-comments", "-csfc").defaultValue(true).build();
-    final Argument<Boolean> keepOldCommentsArg =
-        booleanArgument("-keep-old-comments").defaultValue(false).build();
-    final Argument<String> commentTemplateArg =
-        stringArgument("-comment-template")
-            .defaultValue("")
-            .description("https://github.com/tomasbjerre/violation-comments-lib")
-            .build();
-    final Argument<Integer> pullRequestIdArg =
-        integerArgument("-pull-request-id", "-prid").required().build();
-    final Argument<String> projectKeyArg = stringArgument("-project-key", "-pk").required().build();
-    final Argument<String> repoSlugArg = stringArgument("-repo-slug", "-rs").required().build();
-    final Argument<String> bitbucketServerUrlArg =
-        stringArgument("-server-url", "-url").required().build();
-    final Argument<String> proxyHostArg = stringArgument("-proxy-host").defaultValue("").build();
-    final Argument<Integer> proxyPortArg = integerArgument("-proxy-port").defaultValue(0).build();
-    final Argument<String> proxyUserArg = stringArgument("-proxy-user").defaultValue("").build();
-    final Argument<String> proxyPassArg =
-        stringArgument("-proxy-password").defaultValue("").build();
-    final Argument<String> usernameArg = stringArgument("-username").defaultValue("").build();
-    final Argument<String> passwordArg = stringArgument("-password").defaultValue("").build();
-    final Argument<String> personalAccessTokenArg =
-        stringArgument("-personal-access-token", "-pat").defaultValue("").build();
-    final Argument<String> keyStorePathArg =
-        stringArgument("-keystore-path").defaultValue("").build();
-    final Argument<String> keyStorePassArg =
-        stringArgument("-keystore-pass").defaultValue("changeit").build();
-    final Argument<Boolean> createSingleFileCommentsTasksArg =
-        booleanArgument("-create-single-file-comments-tasks", "-csfct").defaultValue(false).build();
-    final Argument<Integer> commentOnlyChangedContentContextArg =
-        integerArgument("-comment-only-changed-content-context", "-coccc").defaultValue(5).build();
-    final Argument<Integer> maxNumberOfViolationsArg =
-        integerArgument("-max-number-of-violations", "-max")
-            .defaultValue(Integer.MAX_VALUE)
-            .build();
-
+    final CommandLine commandLine = new CommandLine(this);
     try {
-      final ParsedArguments parsed =
-          withArguments( //
-                  helpArgument, //
-                  violationsArg, //
-                  ignorePathsArg, //
-                  minSeverityArg, //
-                  showDebugInfoArg, //
-                  commentOnlyChangedContentArg, //
-                  commentOnlyChangedFilesArg, //
-                  createCommentWithAllSingleFileCommentsArg, //
-                  createSingleFileCommentsArg, //
-                  keepOldCommentsArg, //
-                  commentTemplateArg, //
-                  proxyUserArg, //
-                  pullRequestIdArg, //
-                  projectKeyArg, //
-                  repoSlugArg, //
-                  bitbucketServerUrlArg, //
-                  proxyHostArg, //
-                  proxyPortArg, //
-                  proxyPassArg, //
-                  usernameArg, //
-                  passwordArg, //
-                  personalAccessTokenArg, //
-                  keyStorePathArg,
-                  keyStorePassArg,
-                  createSingleFileCommentsTasksArg, //
-                  commentOnlyChangedContentContextArg, //
-                  maxNumberOfViolationsArg //
-                  ) //
-              .parse(args);
-
-      this.violations = parsed.get(violationsArg);
-      this.ignorePaths = parsed.get(ignorePathsArg);
-      this.minSeverity = parsed.get(minSeverityArg);
-      this.commentOnlyChangedContent = parsed.get(commentOnlyChangedContentArg);
-      this.commentOnlyChangedFiles = parsed.get(commentOnlyChangedFilesArg);
-      this.createCommentWithAllSingleFileComments =
-          parsed.get(createCommentWithAllSingleFileCommentsArg);
-      this.createSingleFileComments = parsed.get(createSingleFileCommentsArg);
-      this.keepOldComments = parsed.get(keepOldCommentsArg);
-      this.commentTemplate = parsed.get(commentTemplateArg);
-      this.proxyUser = parsed.get(proxyUserArg);
-
-      this.pullRequestId = parsed.get(pullRequestIdArg);
-      this.projectKey = parsed.get(projectKeyArg);
-      this.repoSlug = parsed.get(repoSlugArg);
-      this.bitbucketServerUrl = parsed.get(bitbucketServerUrlArg);
-      this.proxyHost = parsed.get(proxyHostArg);
-      this.proxyPort = parsed.get(proxyPortArg);
-      this.proxyPass = parsed.get(proxyPassArg);
-      this.username = parsed.get(usernameArg);
-      this.password = parsed.get(passwordArg);
-      this.personalAccessToken = parsed.get(personalAccessTokenArg);
-      this.keyStorePath = parsed.get(keyStorePathArg);
-      this.keyStorePass = parsed.get(keyStorePassArg);
-      this.createSingleFileCommentsTasks = parsed.get(createSingleFileCommentsTasksArg);
-      this.commentOnlyChangedContentContext = parsed.get(commentOnlyChangedContentContextArg);
-      this.maxNumberOfViolations = parsed.get(maxNumberOfViolationsArg);
-
-      this.showDebugInfo = parsed.wasGiven(showDebugInfoArg);
-      if (this.showDebugInfo) {
-        System.out.println( // NOPMD
-            "Given parameters:\n"
-                + Arrays.asList(args).stream()
-                    .map((it) -> it.toString())
-                    .collect(Collectors.joining(", "))
-                + "\n\nParsed parameters:\n"
-                + this.toString());
-      }
-
-    } catch (final ArgumentException exception) {
-      System.out.println(exception.getMessageAndUsage()); // NOPMD
+      commandLine.parseArgs(args);
+    } catch (final ParameterException exception) {
+      System.out.println(exception.getMessage()); // NOPMD
+      exception.getCommandLine().usage(System.out);
       System.exit(1); // NOPMD
+      return;
+    }
+
+    if (commandLine.isUsageHelpRequested()) {
+      commandLine.usage(System.out);
+      return;
+    }
+
+    if (this.showDebugInfo) {
+      System.out.println( // NOPMD
+          "Given parameters:\n"
+              + Arrays.asList(args).stream()
+                  .map((it) -> it.toString())
+                  .collect(Collectors.joining(", "))
+              + "\n\nParsed parameters:\n"
+              + this.toString());
     }
 
     ViolationsLogger violationsLogger =
@@ -243,8 +190,9 @@ public class Runner {
     }
 
     Set<Violation> allParsedViolations = new TreeSet<>();
-    for (final List<String> configuredViolation : this.violations) {
-      final String reporter = configuredViolation.size() >= 4 ? configuredViolation.get(3) : null;
+    for (int i = 0; i < this.violations.size(); i += 4) {
+      final List<String> configuredViolation = this.violations.subList(i, i + 4);
+      final String reporter = configuredViolation.get(3);
       final Set<Violation> parsedViolations =
           violationsApi() //
               .withViolationsLogger(violationsLogger) //

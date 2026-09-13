@@ -142,92 +142,82 @@ Missing a format? Open an issue [here](https://github.com/tomasbjerre/violations
 # Usage
 
 ```shell
--comment-only-changed-content, -cocc <boolean>          <boolean>: true or false
-                                                        Default: true
--comment-only-changed-content-context, -coccc <integer> <integer>: -2,147,483,648 to 2,147,483,647
-                                                        Default: 5
--comment-only-changed-files, -cocf <boolean>            True if only changed 
-                                                        files should be commented. 
-                                                        False if all findings should 
-                                                        be commented.
-                                                        <boolean>: true or false
-                                                        Default: true
--comment-template <string>                              https://github.
-                                                        com/tomasbjerre/violation-comments-lib
-                                                        <string>: any string
-                                                        Default: 
--create-comment-with-all-single-file-comments, -        <boolean>: true or false
-ccwasfc <boolean>                                       Default: false
--create-single-file-comments, -csfc <boolean>           <boolean>: true or false
-                                                        Default: true
--create-single-file-comments-tasks, -csfct <boolean>    <boolean>: true or false
-                                                        Default: false
--h, --help <argument-to-print-help-for>                 <argument-to-print-help-for>: an argument to print help for
-                                                        Default: If no specific parameter is given the whole usage text is given
---ignorePaths, -i <string>                              Ignore given paths
-                                                         
-                                                        Example: -i node_modules [Supports Multiple occurrences]
-                                                        <string>: any string
-                                                        Default: Empty list
--keep-old-comments <boolean>                            <boolean>: true or false
-                                                        Default: false
--keystore-pass <string>                                 <string>: any string
-                                                        Default: changeit
--keystore-path <string>                                 <string>: any string
-                                                        Default: 
--max-number-of-violations, -max <integer>               <integer>: -2,147,483,648 to 2,147,483,647
-                                                        Default: 2,147,483,647
--password <string>                                      <string>: any string
-                                                        Default: 
--personal-access-token, -pat <string>                   <string>: any string
-                                                        Default: 
--project-key, -pk <string>                              <string>: any string [Required]
--proxy-host <string>                                    <string>: any string
-                                                        Default: 
--proxy-password <string>                                <string>: any string
-                                                        Default: 
--proxy-port <integer>                                   <integer>: -2,147,483,648 to 2,147,483,647
-                                                        Default: 0
--proxy-user <string>                                    <string>: any string
-                                                        Default: 
--pull-request-id, -prid <integer>                       <integer>: -2,147,483,648 to 2,147,483,647 [Required]
--repo-slug, -rs <string>                                <string>: any string [Required]
--server-url, -url <string>                              <string>: any string [Required]
--severity, -s <SEVERITY>                                Minimum severity level 
-                                                        to report.
-                                                        <SEVERITY>: {INFO | WARN | ERROR}
-                                                        Default: INFO
--show-debug-info                                        Please run your 
-                                                        command with this parameter 
-                                                        and supply output when 
-                                                        reporting bugs.
-                                                        Default: disabled
--username <string>                                      <string>: any string
-                                                        Default: 
---violations, -v <string>                               The violations to look 
-                                                        for. <PARSER> <FOLDER> 
-                                                        <REGEXP PATTERN> <NAME> where 
-                                                        PARSER is one of: 
-                                                        ANDROIDLINT, CHECKSTYLE, CODENARC, 
-                                                        CLANG, CPD, CPPCHECK, 
-                                                        CPPLINT, CSSLINT, GENERIC, 
-                                                        FINDBUGS, FLAKE8, FXCOP, 
-                                                        GENDARME, IAR, JCREPORT, JSLINT, 
-                                                        JUNIT, LINT, KLOCWORK, 
-                                                        KOTLINMAVEN, KOTLINGRADLE, MSCPP, 
-                                                        MYPY, GOLINT, 
-                                                        GOOGLEERRORPRONE, PERLCRITIC, PITEST, 
-                                                        PMD, PROTOLINT, PYDOCSTYLE, 
-                                                        PYLINT, RESHARPER, SBTSCALAC, 
-                                                        SIMIAN, SONAR, STYLECOP, 
-                                                        XMLLINT, YAMLLINT, ZPTLINT, 
-                                                        DOCFX, PCLINT, CODECLIMATE, 
-                                                        XUNIT
-                                                         Example: -v "JSHINT" 
-                                                        "." ".*/jshint.xml$" 
-                                                        "JSHint" [Supports Multiple occurrences]
-                                                        <string>: any string
-                                                        Default: Empty list
+Usage: violation-comments-to-bitbucket-server-command-line [-h]
+       [-show-debug-info] [-ccwasfc=<createCommentWithAllSingleFileComments>]
+       [-cocc=<commentOnlyChangedContent>]
+       [-coccc=<commentOnlyChangedContentContext>]
+       [-cocf=<commentOnlyChangedFiles>] [-comment-template=<commentTemplate>]
+       [-csfc=<createSingleFileComments>]
+       [-csfct=<createSingleFileCommentsTasks>]
+       [-keep-old-comments=<keepOldComments>] [-keystore-pass=<keyStorePass>]
+       [-keystore-path=<keyStorePath>] [-max=<maxNumberOfViolations>]
+       [-password=<password>] [-pat=<personalAccessToken>] -pk=<projectKey>
+       -prid=<pullRequestId> [-proxy-host=<proxyHost>]
+       [-proxy-password=<proxyPass>] [-proxy-port=<proxyPort>]
+       [-proxy-user=<proxyUser>] -rs=<repoSlug> [-s=<minSeverity>]
+       -url=<bitbucketServerUrl> [-username=<username>] [-i=<ignorePaths>]...
+       [-v=<violations> <violations> <violations> <violations>]...
+      -ccwasfc, -create-comment-with-all-single-file-comments=<createCommentWith
+        AllSingleFileComments>
+
+      -cocc, -comment-only-changed-content=<commentOnlyChangedContent>
+
+      -coccc, -comment-only-changed-content-context=<commentOnlyChangedContentCo
+        ntext>
+
+      -cocf, -comment-only-changed-files=<commentOnlyChangedFiles>
+                             True if only changed files should be commented.
+                               False if all findings should be commented.
+      -comment-template=<commentTemplate>
+                             https://github.
+                               com/tomasbjerre/violation-comments-lib
+      -csfc, -create-single-file-comments=<createSingleFileComments>
+
+      -csfct, -create-single-file-comments-tasks=<createSingleFileCommentsTasks>
+
+  -h, --help                 Show this help message and exit.
+  -i, --ignorePaths=<ignorePaths>
+                             Ignore given paths
+                             Example: -i node_modules
+      -keep-old-comments=<keepOldComments>
+
+      -keystore-pass=<keyStorePass>
+
+      -keystore-path=<keyStorePath>
+
+      -max, -max-number-of-violations=<maxNumberOfViolations>
+
+      -password=<password>
+      -pat, -personal-access-token=<personalAccessToken>
+
+      -pk, -project-key=<projectKey>
+
+      -prid, -pull-request-id=<pullRequestId>
+
+      -proxy-host=<proxyHost>
+
+      -proxy-password=<proxyPass>
+
+      -proxy-port=<proxyPort>
+
+      -proxy-user=<proxyUser>
+
+      -rs, -repo-slug=<repoSlug>
+
+  -s, -severity=<minSeverity>
+                             Minimum severity level to report.
+      -show-debug-info       Please run your command with this parameter and
+                               supply output when reporting bugs.
+      -url, -server-url=<bitbucketServerUrl>
+
+      -username=<username>
+  -v, --violations=<violations> <violations> <violations> <violations>
+                             The violations to look for. <PARSER> <FOLDER>
+                               <REGEXP PATTERN> <NAME> where PARSER is one of
+                               the values of se.bjurr.violations.lib.reports.
+                               Parser (see supported formats table in README
+                               for the full list).
+                             Example: -v "JSHINT" "." ".*/jshint.xml$" "JSHint"
 ```
 
 Checkout the [Violations Lib](https://github.com/tomasbjerre/violations-lib) for more documentation.
