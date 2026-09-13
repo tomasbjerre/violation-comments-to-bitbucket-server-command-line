@@ -43,17 +43,17 @@ public class Runner {
               + " is one of the values of se.bjurr.violations.lib.reports.Parser (see supported"
               + " formats table in README for the full list).\nExample: -v \"JSHINT\" \".\""
               + " \".*/jshint.xml$\" \"JSHint\"")
-  private List<String> violations = new ArrayList<>();
+  private List<String> violations = new ArrayList<>(); // NOPMD picocli reflection
 
   @Option(
       names = {"--ignorePaths", "-i"},
       description = "Ignore given paths\nExample: -i node_modules")
-  private List<String> ignorePaths = new ArrayList<>();
+  private List<String> ignorePaths = new ArrayList<>(); // NOPMD picocli reflection
 
   @Option(
       names = {"-severity", "-s"},
       description = "Minimum severity level to report.")
-  private SEVERITY minSeverity = INFO;
+  private SEVERITY minSeverity = INFO; // NOPMD picocli reflection
 
   @Option(
       names = "-show-debug-info",
@@ -64,32 +64,32 @@ public class Runner {
   @Option(
       names = {"-comment-only-changed-content", "-cocc"},
       arity = "1")
-  private boolean commentOnlyChangedContent = true;
+  private boolean commentOnlyChangedContent = true; // NOPMD picocli reflection
 
   @Option(
       names = {"-comment-only-changed-files", "-cocf"},
       arity = "1",
       description =
           "True if only changed files should be commented. False if all findings should be commented.")
-  private boolean commentOnlyChangedFiles = true;
+  private boolean commentOnlyChangedFiles = true; // NOPMD picocli reflection
 
   @Option(
       names = {"-create-comment-with-all-single-file-comments", "-ccwasfc"},
       arity = "1")
-  private boolean createCommentWithAllSingleFileComments = false;
+  private boolean createCommentWithAllSingleFileComments = false; // NOPMD picocli reflection
 
   @Option(
       names = {"-create-single-file-comments", "-csfc"},
       arity = "1")
-  private boolean createSingleFileComments = true;
+  private boolean createSingleFileComments = true; // NOPMD picocli reflection
 
   @Option(names = "-keep-old-comments", arity = "1")
-  private Boolean keepOldComments = false;
+  private Boolean keepOldComments = false; // NOPMD picocli reflection
 
   @Option(
       names = "-comment-template",
       description = "https://github.com/tomasbjerre/violation-comments-lib")
-  private String commentTemplate = "";
+  private String commentTemplate = ""; // NOPMD picocli reflection
 
   @Option(
       names = {"-pull-request-id", "-prid"},
@@ -112,42 +112,42 @@ public class Runner {
   private String bitbucketServerUrl;
 
   @Option(names = "-proxy-host")
-  private String proxyHost = "";
+  private String proxyHost = ""; // NOPMD picocli reflection
 
   @Option(names = "-proxy-port")
-  private Integer proxyPort = 0;
+  private Integer proxyPort = 0; // NOPMD picocli reflection
 
   @Option(names = "-proxy-user")
-  private String proxyUser = "";
+  private String proxyUser = ""; // NOPMD picocli reflection
 
   @Option(names = "-proxy-password")
-  private String proxyPass = "";
+  private String proxyPass = ""; // NOPMD picocli reflection
 
   @Option(names = "-username")
-  private String username = "";
+  private String username = ""; // NOPMD picocli reflection
 
   @Option(names = "-password")
-  private String password = "";
+  private String password = ""; // NOPMD picocli reflection
 
   @Option(names = {"-personal-access-token", "-pat"})
-  private String personalAccessToken = "";
+  private String personalAccessToken = ""; // NOPMD picocli reflection
 
   @Option(names = "-keystore-path")
-  private String keyStorePath = "";
+  private String keyStorePath = ""; // NOPMD picocli reflection
 
   @Option(names = "-keystore-pass")
-  private String keyStorePass = "changeit";
+  private String keyStorePass = "changeit"; // NOPMD picocli reflection
 
   @Option(
       names = {"-create-single-file-comments-tasks", "-csfct"},
       arity = "1")
-  private boolean createSingleFileCommentsTasks = false;
+  private boolean createSingleFileCommentsTasks = false; // NOPMD picocli reflection
 
   @Option(names = {"-comment-only-changed-content-context", "-coccc"})
-  private int commentOnlyChangedContentContext = 5;
+  private int commentOnlyChangedContentContext = 5; // NOPMD picocli reflection
 
   @Option(names = {"-max-number-of-violations", "-max"})
-  private Integer maxNumberOfViolations = Integer.MAX_VALUE;
+  private Integer maxNumberOfViolations = Integer.MAX_VALUE; // NOPMD picocli reflection
 
   public void main(final String... args) throws Exception {
     final CommandLine commandLine = new CommandLine(this);
