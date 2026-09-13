@@ -1,3 +1,12 @@
+## 2.4.1 (2026-09-13)
+
+### Bug Fixes
+
+-  suppress false-positive PMD ImmutableField warnings on picocli options ([6584b](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/6584b67565b823d) Tomas Bjerre)  
+
+### Other changes
+
+
 ## 2.3.1 (2025-10-05)
 
 ### Bug Fixes
