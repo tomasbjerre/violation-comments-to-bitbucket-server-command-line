@@ -57,10 +57,13 @@ public class Runner {
 
   @Option(
       names = "-show-debug-info",
-      description = "Please run your command with this parameter and supply output when reporting bugs.")
+      description =
+          "Please run your command with this parameter and supply output when reporting bugs.")
   private boolean showDebugInfo;
 
-  @Option(names = {"-comment-only-changed-content", "-cocc"}, arity = "1")
+  @Option(
+      names = {"-comment-only-changed-content", "-cocc"},
+      arity = "1")
   private boolean commentOnlyChangedContent = true;
 
   @Option(
@@ -70,10 +73,14 @@ public class Runner {
           "True if only changed files should be commented. False if all findings should be commented.")
   private boolean commentOnlyChangedFiles = true;
 
-  @Option(names = {"-create-comment-with-all-single-file-comments", "-ccwasfc"}, arity = "1")
+  @Option(
+      names = {"-create-comment-with-all-single-file-comments", "-ccwasfc"},
+      arity = "1")
   private boolean createCommentWithAllSingleFileComments = false;
 
-  @Option(names = {"-create-single-file-comments", "-csfc"}, arity = "1")
+  @Option(
+      names = {"-create-single-file-comments", "-csfc"},
+      arity = "1")
   private boolean createSingleFileComments = true;
 
   @Option(names = "-keep-old-comments", arity = "1")
@@ -131,7 +138,9 @@ public class Runner {
   @Option(names = "-keystore-pass")
   private String keyStorePass = "changeit";
 
-  @Option(names = {"-create-single-file-comments-tasks", "-csfct"}, arity = "1")
+  @Option(
+      names = {"-create-single-file-comments-tasks", "-csfct"},
+      arity = "1")
   private boolean createSingleFileCommentsTasks = false;
 
   @Option(names = {"-comment-only-changed-content-context", "-coccc"})
