@@ -11,6 +11,7 @@ import static se.softhouse.jargo.Arguments.optionArgument;
 import static se.softhouse.jargo.Arguments.stringArgument;
 import static se.softhouse.jargo.CommandLineParser.withArguments;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.ArrayList;
@@ -226,9 +227,14 @@ public class Runner {
           }
 
           @Override
+          @SuppressFBWarnings(
+              value = "INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE",
+              justification =
+                  "Printing the stack trace to this CLI's own stdout is the intended behavior")
           public void log(final Level level, final String string, final Throwable t) {
             final StringWriter sw = new StringWriter();
-            t.printStackTrace(new PrintWriter(sw));
+            t.printStackTrace(
+                new PrintWriter(sw)); // NOPMD writes to an in-memory buffer, not System.err
             System.out.println(level + " " + string + "\n" + sw.toString()); // NOPMD
           }
         };
