@@ -1,3 +1,38 @@
+## 2.4.3 (2026-09-14)
+
+### Bug Fixes
+
+-  using SIGNING_PASSWORD to replace signing.password that does not work in Github actions ([4eb89](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/4eb8939a0b6b170) Tomas Bjerre)  
+-  using SIGNING_PASSWORD to replace signing.password that does not work in Github actions ([4311c](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/4311c628b935203) Tomas Bjerre)  
+
+### Other changes
+
+**Add missing draft-release workflow so releases get drafted like sibling repos**
+
+
+[ebc21](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/ebc21c28fa2df72) Tomas Bjerre *2026-09-14 20:03:04*
+
+**Superseded by centralized publish-draft-releases.yaml in .github**
+
+
+[bb12f](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/bb12f2cc5e46f85) Tomas Bjerre *2026-09-14 19:58:41*
+
+**Auto-publish pending draft releases weekly**
+
+
+[28065](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/280658d8334d0ab) Tomas Bjerre *2026-09-14 19:47:41*
+
+**Use shared reusable release workflow**
+
+* Replace the repo-local release.yaml body with a call to 
+* tomasbjerre/.github&#x27;s gradle-npm-maven-docker-release.yaml reusable 
+* workflow, so the release steps are maintained in one place. 
+* Co-Authored-By: Claude Sonnet 5 &lt;noreply@anthropic.com&gt; 
+* Claude-Session: https://claude.ai/code/session_017K9KgD31eJFz7wu9b2C7XE 
+
+[b6191](https://github.com/tomasbjerre/violation-comments-to-bitbucket-server-command-line/commit/b6191611b6a359a) Tomas Bjerre *2026-09-14 11:25:54*
+
+
 ## 2.4.2 (2026-09-13)
 
 ## 2.4.1 (2026-09-13)
