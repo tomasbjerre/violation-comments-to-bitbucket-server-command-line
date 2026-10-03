@@ -168,9 +168,7 @@ public class Runner {
     if (this.showDebugInfo) {
       System.out.println( // NOPMD
           "Given parameters:\n"
-              + Arrays.asList(args).stream()
-                  .map((it) -> it.toString())
-                  .collect(Collectors.joining(", "))
+              + Arrays.asList(args).stream().collect(Collectors.joining(", "))
               + "\n\nParsed parameters:\n"
               + this.toString());
     }
